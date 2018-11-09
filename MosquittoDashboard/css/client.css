@@ -1,0 +1,95 @@
+/* To push footer to bottom of screen */
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+    position: relative;
+    min-height: 100%;
+  }
+  body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    opacity:0;
+  }
+  .footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* Set the fixed height of the footer here */
+    height: 60px;
+    /* background-color: #f5f5f5; */
+    background-color: #395c82;
+    border-bottom-color: #395C82;
+    border-left-color: #395C82;
+    border-top-color: #395C82;
+    border-right-color: #395C82;
+    color: #FFF;
+  }
+  
+  div.widget {
+    padding-top: 0px;
+  }
+
+.card {
+  overflow: hidden;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  -webkit-transition: .25s box-shadow;
+  transition: .25s box-shadow;
+}
+
+.card:focus,
+.card:hover {
+  box-shadow: 0 5px 11px 0 rgba(0, 0, 0, 0.18), 0 4px 15px 0 rgba(0, 0, 0, 0.15);
+}
+
+.card-inverse .card-img-overlay {
+  background-color: rgba(51, 51, 51, 0.85);
+  border-color: rgba(51, 51, 51, 0.85);
+}
+
+.row {
+	background-color: #f5f5f5;	
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
+.incident-title {
+  background-color: #1087dd;
+  color: #f1f1f1;
+  font-size: 17px;
+  text-align:center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+footer.sticky-footer {
+  width: 100%;
+  background-color: #0a1633;
+}
+
+.dashboard_main_title {
+  font-family: PT Sans,Trebuchet MS,Arial Narrow,sans-serif;
+  font-size: 1.25rem;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align:center;
+}
+
+.dashboard_date {
+  font-family: PT Sans,Trebuchet MS,Arial Narrow,sans-serif;
+  font-size: 1rem;
+  text-align: right;
+  padding-right: 16px;
+}
+
+.custom_footer {
+  background-color: #0a1633;
+  font-family: PT Sans,Trebuchet MS,Arial Narrow,sans-serif;
+  color: #fff;
+  text-align: center;
+}
+
+.c3-chart-arc path {
+  stroke: transparent !important;
+}
+

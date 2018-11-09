@@ -1,0 +1,415 @@
+
+<!doctype html>
+    <html class="no-js" lang="">
+        <head>
+            <meta charset="utf-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge"
+            ><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+            <meta name="description" content="">
+            <meta name="author" content="">
+            <title>Mosquitto MQTT Dashboard</title>
+			<!-- stylesheets(2) for login modal popup -->
+			<link rel="stylesheet" href="./vendor/c3/css/c3.css">
+            <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+            <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css">
+			<link rel="stylesheet" href="./css/client.css">
+			<link rel="stylesheet" href="./css/dashboard.css">
+			<link rel="icon" href="./mosquitto_favicon.png" sizes="16x16">
+        </head>
+        <body>
+			<div id="mainPage">
+				<div class="container-fluid" >
+					<div class="row pt-0 pb-0">
+							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
+									<img src="./mosquitto.png" height="30">
+							</div>
+							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
+									Realtime <a href="https://test.mosquitto.org/">test.mosquitto.org</a> Broker Dashboard
+							</div>
+							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
+									<div class="col-xl-6 col-sm-6 mb-0 pr-1">Broker Uptime</div>
+									<div class="col-xl-6 col-sm-6 mb-0 pr-1 widget" id="widget4"></div>
+							</div>
+					</div>
+				</div>
+				<div class="container-fluid mt-0">  
+
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Messages Received</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget1">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Messages Sent</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget2">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Retained Messages Count</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget6">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Clients Total</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget3">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Clients Connected</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget7">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Clients Disconnected</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget8">
+										<p>Chart</p>	
+									</div>
+								</div>
+							</div>
+						</div>
+
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Messages Stored</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget9">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Subscriptions Count</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget10">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Publish Messages Dropped</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget13">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Received/min  (1 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget14">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Received/min (5 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget15">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Received/min (15 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget16">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Sent/min (1 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget17">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Sent/min (5 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget18">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Messages Sent/min (15 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget19">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Socket Connections/min (1 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget20">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Socket Connections/min (5 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget21">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="col-xl-3 col-sm-6 mb-3 pr-1">
+							<div class="card mt-3">
+								<div class="card-header incident-title text-white font-weight-bold"><span class="text">Avg Socket Connections/min (15 min)</span></div>
+								<div class="card-body" style="display:block; height: 20px;">
+									<div class="widget" id="widget22">
+										<p>Chart</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!-- div for login modal popup -->
+			<div id="dialog-form" title="User Authentication" >
+				<p id="validateHeader" class="validateTips">All form fields are required.</p>
+				<form>
+					<fieldset>
+					<label for="username">Username</label>
+					<input type="text" name="username" id="username" class="text ui-widget-content ui-corner-all" tabindex="1">
+					<label for="password">Password</label>
+					<input type="password" name="password" id="password" class="text ui-widget-content ui-corner-all"  tabindex="2">
+					<br>
+					<input type="button" value="Login" tabindex="3"  id="credentailsSubmit">
+					</fieldset>
+				</form>
+            </div>
+            
+			<!-- bootstrap dialog. Event fired on js click -->
+			<div class="modal fade" id="jsPopUpWindow" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true" data-backdrop="static" data-keyboard="false">
+				<div class="modal-dialog modal-dialog-centered" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="titleText">Clicked Data</h5>
+							<button class="close" type="button" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						</div>
+						<div class="modal-body">
+							<form>
+								<div>
+									<p id="jsPopUpText"></p>
+								</div>
+						</div>
+					</div>
+				</div>
+            </div>
+            
+			<!-- jquery-ui javascript for login modal popup -->
+			<script src='./vendor/jquery/js/jquery-3.2.1.min.js'></script>
+			<script src="./vendor/jquery-ui/js/jquery-ui.min.js"></script>			
+			<script src='./vendor/bootstrap/js/bootstrap.bundle.min.js'></script>
+			<script src='./vendor/d3/js/d3.v5.min.js'></script>
+			<script src='./vendor/c3/js/c3.min.js'></script>
+			<script src='./vendor/paho/js/paho-mqtt-min.js'></script>
+			<script src="./js/dashboard_anonymous.js"></script>
+			<script>
+				$(document).ready(function() {
+					setTimeout(function(){document.body.style.opacity="100";},500);
+					$("#mainPage").hide();
+					$('#credentailsSubmit').click();
+				})
+			</script>
+			<script>
+				//All the values are required
+                CreateWidget({
+                    bindto: "widget1",
+                    datastream: "$SYS/broker/messages/received",
+                    type: "labeltext",
+                    label: "",
+                    height: 20
+				});
+                CreateWidget({
+                    bindto: "widget2",
+                    datastream: "$SYS/broker/messages/sent",
+                    type: "labeltext",
+                    label: "",
+                    height: 20
+				});
+                CreateWidget({
+                    bindto: "widget3",
+                    datastream: "$SYS/broker/clients/total",
+                    type: "labeltext",
+                    label: "",
+                    height: 20
+				});
+                CreateWidget({
+                    bindto: "widget4",
+                    datastream: "$SYS/broker/uptime",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget6",
+                    datastream: "$SYS/broker/retained messages/count",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget7",
+                    datastream: "$SYS/broker/clients/connected",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget8",
+                    datastream: "$SYS/broker/clients/disconnected",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget9",
+                    datastream: "$SYS/broker/messages/stored",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget10",
+                    datastream: "$SYS/broker/subscriptions/count",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget11",
+                    datastream: "$SYS/broker/publish/messages/received",
+                    type: "labeltext",
+                    // height: 200
+				});
+                CreateWidget({
+                    bindto: "widget12",
+                    datastream: "$SYS/broker/publish/messages/sent",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget13",
+                    datastream: "$SYS/broker/publish/messages/dropped",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget14",
+                    datastream: "$SYS/broker/load/messages/received/1min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget15",
+                    datastream: "$SYS/broker/load/messages/received/5min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget16",
+                    datastream: "$SYS/broker/load/messages/received/15min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget17",
+                    datastream: "$SYS/broker/load/messages/sent/1min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget18",
+                    datastream: "$SYS/broker/load/messages/sent/5min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget19",
+                    datastream: "$SYS/broker/load/messages/sent/15min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget20",
+                    datastream: "$SYS/broker/load/sockets/1min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget21",
+                    datastream: "$SYS/broker/load/sockets/5min",
+                    type: "labeltext",
+                    // height: 200
+				});
+				CreateWidget({
+                    bindto: "widget22",
+                    datastream: "$SYS/broker/load/sockets/15min",
+                    type: "labeltext",
+                    // height: 200
+				});
+			</script>
+        </body>
+    </html>
