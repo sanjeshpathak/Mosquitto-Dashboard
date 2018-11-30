@@ -12,12 +12,12 @@ not with tcp
 usessl = true; // if you are connecting to wss protocol set this to true, else false for ws
 ```
 
-After you have made the above changes, double click or open MosquittoDashboard.html file in Chrome browser.
+After you have made the above changes, double click or open MosquittoDashboard.html file in Chrome browser. Enter your MQTT Broker user credentials. Your dashboard is up and running. All the values will get automatically updated.
 
-Enter your MQTT Broker user credentials. Your dashboard is up and running. All the values will get automatically updated.
+View the real time dashboard live in action here: <http://rtsdp.eu5.org/dashboard/TestMosquittoOrgDashboard.html>. This dashboard is displaying live, the metrics of the publicly available Mosquitto Broker hosted at <https://test.mosquitto.org/>.
 
-View the real time dashboard live in action here: <http://rtsdp.eu5.org/dashboard/TestMosquittoOrgDashboard.html>. This dashboard is displaying live the metrics of the publicly available Mosquitto Broker hosted at <https://test.mosquitto.org/>.
-
-If you want to check if all the files are in place, there is a dashboard configured out of the box for <https://test.mosquitto.org/> public MQTT Broker. Double click or open the file TestMosquittoOrgDashboard.html in Chrome browser. If it is running, then you are set. You have everything you need.
+If you want to check if all the downloaded files are in place, there is a dashboard configured out of the box for <https://test.mosquitto.org/> public MQTT Broker. Double click or open the file TestMosquittoOrgDashboard.html in Chrome browser. If it is running, then you are set. You have everything you need. This Mosquitto instance is configured to accept connections anonymously. No need for username and password.
 
 The dashboard is built for Responsive Web Design (https://en.wikipedia.org/wiki/Responsive_web_design). The dashboard is mobile device friendly. The widgets align based on mobile device's screen size.
+
+This dashboard is built using my other project, Real Time Streaming Dashboard Platform: <https://github.com/sanjeshpathak/realtimedashboardplatform>.
