@@ -3,11 +3,11 @@ A real time dashboard for monitoring Mosquitto Broker (MQTT)
 
 I have made it easy for you to get an insight into into your Mosquitto Broker (MQTT). Download all the files. You will get a directory named MosquittoBroker.
 
-Change these values to reflect your MQTT broker's details in **dashboard.js** file (it is inside the js directory):
+Change these values to reflect your MQTT broker's details in **dashboard.js** file (it is inside the **js** directory):
 
 ```
 var ip = "m10.cloudmqtt.com"; // replace this value with your brokers IP address or domain name
-var port = "37629"; // port number for your broker's web socket listener. The dashboard platform will work only with websockets and
+var port = "37629"; // port number for your broker's web socket listener. The dashboard will work only with websockets and
 not with tcp
 usessl = true; // if you are connecting to wss protocol set this to true, else false for ws
 ```
