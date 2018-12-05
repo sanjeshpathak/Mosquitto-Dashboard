@@ -18,6 +18,7 @@ View the real time dashboard live in action here: <http://rtsdp.eu5.org/dashboar
 
 If you want to check if all the downloaded files are in place, there is a dashboard configured out of the box for <https://test.mosquitto.org/> public MQTT Broker. Double click or open the file TestMosquittoOrgDashboard.html in Chrome browser. If it is running, then you are set. You have everything you need. This Mosquitto instance is configured to accept connections anonymously. No need for username and password.
 
-The dashboard is built for Responsive Web Design (https://en.wikipedia.org/wiki/Responsive_web_design). The dashboard is mobile device friendly. The widgets align based on mobile device's screen size.
+The dashboard is built for Responsive Web Design (https://en.wikipedia.org/wiki/Responsive_web_design). The dashboard is mobile device friendly. The widgets align based on mobile device's screen size. And each metric on the dashboard get automatilcally updated (or pushed) on your mobile device and as soon a new metric gets calculated and published by the broker. It is not a whole browser refresh, each metric gets updated independently. To understand how this whole thing works, see my other project mentioned below.
 
 This dashboard is built using my other project, Real Time Streaming Dashboard Platform: <https://github.com/sanjeshpathak/realtimedashboardplatform>.
+
