@@ -16,6 +16,8 @@ After you have made the above changes, double click or open MosquittoDashboard.h
 
 View the real time dashboard live in action here: <http://rtsdp.eu5.org/dashboard/TestMosquittoOrgDashboard.html>. This dashboard is displaying live, the metrics of the publicly available Mosquitto Broker hosted at <https://test.mosquitto.org/>.
 
+(There is a modified dashboard here with Charts: <http://mosquitto.eu5.org/TestMosquittoOrgDashboard.html>).
+
 If you want to check if all the downloaded files are in place, there is a dashboard configured out of the box for <https://test.mosquitto.org/> public MQTT Broker. Double click or open the file TestMosquittoOrgDashboard.html in Chrome browser. If it is running, then you are set. You have everything you need. This Mosquitto instance is configured to accept connections anonymously. No need for username and password.
 
 The dashboard is built for Responsive Web Design (https://en.wikipedia.org/wiki/Responsive_web_design). The dashboard is mobile device friendly. The widgets align based on mobile device's screen size. And each metric on the dashboard get automatilcally updated (or pushed) on your mobile device and as soon a new metric gets calculated and published by the broker. It is not a whole browser refresh, each metric gets updated independently. To understand how this whole thing works, see my other project mentioned below.
