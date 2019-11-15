@@ -2,12 +2,25 @@
 <!doctype html>
     <html class="no-js" lang="">
         <head>
+
+			<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-399196-2"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-399196-2');
+</script>
+
             <meta charset="utf-8">
             <meta http-equiv="X-UA-Compatible" content="IE=edge"
             ><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
             <meta name="description" content="">
             <meta name="author" content="">
-            <title>Mosquitto MQTT Dashboard</title>
+			<title>Mosquitto Dashboard. Real time Dashboard for Moaquitto Broker.</title>
+			<meta name="description" content="Mosquitto Dashboard. A Dashboard for Mosquitto Broker. A dashboard that displays most of the $SYS Topic. Real time Mosquitto Dashboard.">
+  
 			<!-- stylesheets(2) for login modal popup -->
 			<link rel="stylesheet" href="./vendor/c3/css/c3.css">
             <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
@@ -15,14 +28,17 @@
 			<link rel="stylesheet" href="./css/client.css">
 			<link rel="stylesheet" href="./css/dashboard.css">
 			<link rel="icon" href="./mosquitto_favicon.png" sizes="16x16">
+			<meta name="google-site-verification" content="Z46WF5fuUTKpbFTSpDKMk6VGF8XrvIIziqOqvyQBHTs" />
         </head>
         <body>
 			<div id="mainPage">
 				<div class="container-fluid" >
 					<div class="row pt-0 pb-0">
+						    
 							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
 									<img src="./mosquitto.png" height="30">
 							</div>
+							
 							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
 									Realtime <a href="https://test.mosquitto.org/">test.mosquitto.org</a> Broker Dashboard
 							</div>
@@ -30,8 +46,36 @@
 									<div class="col-xl-6 col-sm-6 mb-0 pr-1">Broker Uptime</div>
 									<div class="col-xl-6 col-sm-6 mb-0 pr-1 widget" id="widget4"></div>
 							</div>
+							<!--
+							<div class="col-xl-3 col-sm-6 mb-0 pr-1">
+								<a href="https://github.com/sanjeshpathak/Mosquitto-Dashboard" target=”_blank”>Get the code to host your own Mosquitto Dashboard from Git Hub</a>
+							</div>
+							-->
 					</div>
 				</div>
+
+				<!--
+				<div class="container-fluid" >
+					<div class="row pt-0 pb-0">
+							<div class="col-xl-1 col-sm-1 mb-0 pr-1">
+								<a href="http://fleettracker.co.in/" target=”_blank”><img src="./FleetTrackerBanner.png"></a>
+							</div>
+					</div>
+				</div>
+				-->
+				<!-- GPS Tracker
+				<div class="container-fluid" >
+					<div class="row pt-0 pb-0">
+							<div>
+								<h2>
+									Advertisement: Free GPS Fleet Tracker. Track your Vehicles in Real Time on the Map. No need to install any device on the vehicle. Uses mobile phone to send Vehicle's GPS location.
+									<a href="http://fleettracker.co.in/">Free GPS Fleet Tracker</a>
+								</h2>
+							</div>
+					</div>
+				</div>
+				-->
+
 				<div class="container-fluid mt-0">  
 
 					<div class="row">
